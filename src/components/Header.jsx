@@ -2,24 +2,42 @@ import { Button } from "@/components/ui/button";
 import { Menu, Instagram, Twitter, MessageCircle, X } from "lucide-react";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [isHovered, setIsHovered] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hideHeader, setHideHeader] = useState(false);
+
+  // Scroll behavior logic
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setHideHeader(true); // Scroll down
+      } else {
+        setHideHeader(false); // Scroll up
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "#hero", label: "Home", spice: "Welcome" },
     { href: "#about", label: "About", spice: "Our Story" },
     { href: "#menu", label: "Menu", spice: "Delights" },
-    { href: "#where", label: "Where We Serve", spice: "Locations" },
+    { href: "#where", label: "Business Model", spice: "Roadmap" },
     { href: "#contact", label: "Contact", spice: "Connect" }
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Instagram, href: "https://instagram.com/secret_spice", label: "Instagram" },
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: MessageCircle, href: "https://wa.me", label: "WhatsApp" }
+    { icon: MessageCircle, href: "https://wa.me/918484943143", label: "WhatsApp" }
   ];
 
   const toggleMobileMenu = () => {
@@ -27,10 +45,10 @@ export default function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 royal-black pattern-bg sticky top-0 z-50 border-b border-[#D4AF37]/20 backdrop-blur-md">
+    <header className={`flex justify-between items-center p-4 royal-black pattern-bg sticky top-0 z-50 border-b border-[#D4AF37]/20 backdrop-blur-md transition-transform duration-300 ${hideHeader ? "-translate-y-full" : "translate-y-0"}`}>
       {/* Spice Pattern Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:20px_20px] opacity-5"></div>
-      
+
       {/* Logo with Spice Effect */}
       <motion.div 
         initial={{ opacity: 0, x: -20 }}
@@ -43,7 +61,7 @@ export default function Header() {
       </motion.div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex gap-8 text-sm">
+      <nav className="hidden md:flex gap-8 text-sm absolute left-1/2 transform -translate-x-1/2">
         {navItems.map((item, index) => (
           <motion.div
             key={item.href}
@@ -51,8 +69,6 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
             className="relative group"
-            onMouseEnter={() => setIsHovered(index)}
-            onMouseLeave={() => setIsHovered(null)}
           >
             <a 
               href={item.href} 
@@ -66,9 +82,8 @@ export default function Header() {
         ))}
       </nav>
 
-      {/* Desktop Social Links and CTA */}
+      {/* Desktop Socials + CTA */}
       <div className="hidden md:flex items-center gap-4">
-        {/* Social Media Icons */}
         <div className="flex gap-3 mr-4">
           {socialLinks.map((social, index) => (
             <motion.a
@@ -90,7 +105,6 @@ export default function Header() {
           ))}
         </div>
 
-        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -138,7 +152,6 @@ export default function Header() {
             className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-[#D4AF37]/20 md:hidden"
           >
             <div className="p-4 space-y-4">
-              {/* Mobile Navigation */}
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.href}
@@ -154,7 +167,6 @@ export default function Header() {
                 </motion.a>
               ))}
 
-              {/* Mobile Social Links */}
               <div className="flex justify-center gap-4 pt-4 border-t border-[#D4AF37]/20">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -172,7 +184,6 @@ export default function Header() {
                 ))}
               </div>
 
-              {/* Mobile CTA Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -16,6 +16,7 @@ import Intro from "./components/Intro";
 import WhyUs from "./components/WhyUs";
 import JoinUs from "./components/JoinUs";
 import Form from "./components/Form";
+import Offers from "./components/Offers";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -116,6 +117,7 @@ function App() {
         <About />
         <Intro />
         <Menu />
+        <Offers />
         <PreOrder />
         <Spots />
         <Event />

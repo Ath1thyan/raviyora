@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import b1 from "../assets/b2.jpg";
 import { Phone, MessageCircle, Mail, Instagram } from "lucide-react";
 
 export default function Contact() {
@@ -11,15 +10,15 @@ export default function Contact() {
       {
         icon: Phone,
         title: "Call Us",
-        value: "+91 98765 43210",
-        link: "tel:+919876543210",
+        value: "+91 84849 43143",
+        link: "tel:+918484943143",
         description: "For immediate assistance"
       },
       {
         icon: MessageCircle,
         title: "WhatsApp",
         value: "Chat with us",
-        link: "https://wa.me/919876543210",
+        link: "https://wa.me/918484943143",
         description: "For pre-orders & queries"
       },
       {
@@ -32,8 +31,8 @@ export default function Contact() {
       {
         icon: Instagram,
         title: "Follow Us",
-        value: "@spice&secret",
-        link: "https://instagram.com/",
+        value: "@secret_spice",
+        link: "https://instagram.com/secret_spice",
         description: "For daily biryani stories"
       }
     ];

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png";
 import { Instagram, Facebook, ExternalLink, Home, Info, Utensils, Star, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -14,8 +13,8 @@ export default function Footer() {
         { name: "Contact", href: "#contact", icon: Phone }
       ],
       social: [
-        { name: "Instagram", href: "https://instagram.com/", icon: Instagram },
-        { name: "Facebook", href: "https://facebook.com/", icon: Facebook },
+        { name: "Instagram", href: "https://instagram.com/secret_spice", icon: Instagram },
+        { name: "Facebook", href: "https://facebook.com/secret_spice", icon: Facebook },
         { name: "Zomato", href: "https://zomato.com", icon: ExternalLink },
         { name: "Swiggy", href: "https://swiggy.com", icon: ExternalLink }
       ]
@@ -140,8 +139,11 @@ export default function Footer() {
                   </div>
                   <div className="text-left">
                     <p className="text-[#FDB931]/60 text-sm">Call us</p>
-                    <a href="tel:+919876543210" className="text-[#D4AF37] hover:text-[#FDB931] text-lg font-semibold transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+918484943143" className="text-[#D4AF37] hover:text-[#FDB931] text-lg font-semibold transition-colors">
+                      +91 84849 43143
+                    </a>
+                    <a href="tel:+919066043143" className="text-[#D4AF37] hover:text-[#FDB931] text-lg font-semibold transition-colors block">
+                      +91 90660 43143
                     </a>
                   </div>
                 </div>

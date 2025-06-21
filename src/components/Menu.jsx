@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion } from "framer-motion";
 // import b1 from "../assets/b1.avif"
@@ -7,118 +8,148 @@ import b4 from "../assets/b4.jpeg"
 import b5 from "../assets/b5.jpg"
 import b6 from "../assets/b6.webp"
 import pot1 from "../assets/bgb4.png"
+import logo from "../assets/logo.png"
+import HTMLFlipBook from 'react-pageflip';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export default function Menu() {
     const items = [
       { 
-        name: "Chicken Dum Biriyani", 
-        desc: "Tender, spicy, cooked over slow flame",
+        name: "Chicken Biriyani", 
+        desc: "Flavour-packed basmati rice, tender chicken, slow cooked with house spices. Comes with Raitha & Signature Curry (500g) Packed with ~25g protein per serving.",
         spice: "🌶️🌶️🌶️",
         image: b2,
         bestseller: true,
         journey: "The Classic",
-        curve: "curve-1"
+        curve: "curve-1",
+        price: "₹169",
+        type: "non-veg",
+        serves: "1-2 Persons",
+        mustTry: true,
+        protein: "25g",
+        calories: "450-500",
+        popularity: "⭐⭐⭐⭐⭐"
       },
       { 
-        name: "Mutton Dum Biriyani", 
-        desc: "Soft meat, rich masala",
+        name: "Mutton Biriyani", 
+        desc: "Juicy mutton chunks, royal spice blend, long-grain biryani rice. Comes with Raitha & Signature Curry (500g) Rich in ~30g protein, perfect for meat lovers.",
         spice: "🌶️🌶️🌶️🌶️",
         image: b3,
         special: true,
         journey: "The Royal",
-        curve: "curve-2"
+        curve: "curve-2",
+        price: "₹229",
+        type: "non-veg",
+        serves: "1-2 Persons",
+        mustTry: true,
+        protein: "30g",
+        calories: "500-550",
+        popularity: "⭐⭐⭐⭐⭐"
       },
       { 
-        name: "Egg Biriyani", 
-        desc: "Classic and comforting",
+        name: "Mushroom Biriyani", 
+        desc: "Earthy mushrooms with fragrant spices & saffron-infused rice (450g) Naturally rich in ~10g plant-based protein.",
         spice: "🌶️🌶️",
         image: b4,
-        journey: "The Comfort",
-        curve: "curve-3"
+        journey: "The Vegetarian",
+        curve: "curve-3",
+        price: "₹120",
+        type: "veg",
+        serves: "1 Person",
+        protein: "10g",
+        calories: "350-400",
+        popularity: "⭐⭐⭐⭐"
       },
       { 
-        name: "Paneer / Veg Pulao", 
-        desc: "For our veggie friends",
-        spice: "🌶️",
+        name: "Veg Biriyani", 
+        desc: "Seasonal veggies, slow-cooked with biryani rice & handpicked herbs (450g) Balanced & wholesome with ~9g protein from mixed vegetables.",
+        spice: "🌶️🌶️",
         image: b5,
         journey: "The Vegetarian",
-        curve: "curve-4"
+        curve: "curve-4",
+        price: "₹120",
+        type: "veg",
+        serves: "1 Person",
+        protein: "9g",
+        calories: "300-350",
+        popularity: "⭐⭐⭐⭐"
       },
       { 
-        name: "Raita & Salna", 
-        desc: "It's not complete without them",
+        name: "Ghee Rice", 
+        desc: "Aromatic rice tossed in desi ghee & mild whole spices (450g) Light yet energizing, with ~5g protein per plate.",
         spice: "🌶️",
         image: b6,
-        journey: "The Accompaniment",
-        curve: "curve-5"
+        journey: "The Simple",
+        curve: "curve-5",
+        price: "₹120",
+        type: "veg",
+        serves: "1 Person",
+        protein: "5g",
+        calories: "250-300",
+        popularity: "⭐⭐⭐"
       },
+      { 
+        name: "Chicken Kebab", 
+        desc: "(6 pcs) Chargrilled, juicy & spiced to perfection. Delivers approximately 22g of high-quality lean protein – perfect for muscle recovery and sustained energy.",
+        spice: "🌶️🌶️",
+        image: b2,
+        journey: "The Grilled",
+        curve: "curve-6",
+        price: "₹129",
+        type: "non-veg",
+        serves: "1-2 Persons",
+        mustTry: true,
+        protein: "22g",
+        calories: "300-350",
+        popularity: "⭐⭐⭐⭐⭐"
+      },
+      { 
+        name: "Pepper Chicken", 
+        desc: "Tender boneless chicken tossed in cracked black pepper and roasted spices. Packed with about 24g of protein – ideal for spice lovers who want a strong, satiating protein hit.",
+        spice: "🌶️🌶️🌶️",
+        image: b3,
+        journey: "The Spicy",
+        curve: "curve-7",
+        price: "₹149",
+        type: "non-veg",
+        serves: "1-2 Persons",
+        mustTry: true,
+        protein: "24g",
+        calories: "350-400",
+        popularity: "⭐⭐⭐⭐"
+      }
     ];
 
     const comboMenus = [
       {
-        name: "Royal Feast",
-        desc: "A complete royal dining experience",
-        details: [
-          "Chicken Dum Biryani (1 Full)",
-          "Raita (1 Cup)",
-          "Salna (1 Cup)",
-          "Gulab Jamun (2 Pieces)",
-          "Mint Chutney (1 Cup)",
-          "Onion Raita (1 Cup)"
-        ],
-        price: "₹299",
+        name: "Biryani Rice Combo",
+        desc: "Biryani Rice Rice + Raitha + Curry + 3pc Chicken Kebab + Gulab Jamun. Biryani rice paired with creamy raitha and spicy curry, served with juicy kebabs and a sweet jamun treat.",
+        price: "₹159",
         spice: "🌶️🌶️",
         image: b2,
         bestseller: true,
         journey: "The Complete Meal",
-        curve: "curve-6",
+        curve: "curve-8",
         serves: "1 Person",
-        time: "25-30 mins",
-        savings: "Save ₹50"
+        savings: "Save ₹50",
+        protein: "24g",
+        calories: "350-400",
+        popularity: "⭐⭐⭐⭐"
       },
       {
-        name: "Family Pack",
-        desc: "Perfect for family gatherings and celebrations",
-        details: [
-          "Chicken Dum Biryani (2 Full)",
-          "Mutton Dum Biryani (2 Full)",
-          "Raita (2 Cups)",
-          "Salna (2 Cups)",
-          "Gulab Jamun (4 Pieces)",
-          "Mint Chutney (2 Cups)",
-          "Onion Raita (2 Cups)",
-          "Extra Salna (1 Cup)"
-        ],
-        price: "₹999",
+        name: "Chicken Biriyani Combo",
+        desc: "Chicken Biryani + Raitha + Curry + 3pc Pepper Chicken + Gulab Jamun. A full-on feast! Aromatic chicken biryani served with refreshing raitha and curry, plus smoky pepper chicken and a soft jamun for dessert.",
+        price: "₹199",
         spice: "🌶️🌶️🌶️",
         image: b3,
         special: true,
-        journey: "The Family Special",
-        curve: "curve-7",
-        serves: "4-5 People",
-        time: "35-40 mins",
-        savings: "Save ₹150"
-      },
-      {
-        name: "Veg Delight",
-        desc: "A wholesome vegetarian feast",
-        details: [
-          "Paneer Pulao (1 Full)",
-          "Veg Raita (1 Cup)",
-          "Veg Salna (1 Cup)",
-          "Gulab Jamun (2 Pieces)",
-          "Mint Chutney (1 Cup)",
-          "Onion Raita (1 Cup)",
-          "Extra Salna (1 Cup)"
-        ],
-        price: "₹249",
-        spice: "🌶️",
-        image: b5,
-        journey: "The Vegetarian Feast",
-        curve: "curve-8",
+        journey: "The Feast",
+        curve: "curve-9",
         serves: "1 Person",
-        time: "20-25 mins",
-        savings: "Save ₹40"
+        savings: "Save ₹70",
+        protein: "24g",
+        calories: "350-400",
+        popularity: "⭐⭐⭐⭐"
       }
     ];
 
@@ -143,16 +174,37 @@ export default function Menu() {
         }
       }
     };
-  
+
+    // Split items into pairs for two-page layout
+    const pagePairs = [];
+    // Add regular menu items
+    for (let i = 0; i < items.length; i++) {
+      pagePairs.push([items[i]]);
+    }
+    // Add combo menus
+    for (let i = 0; i < comboMenus.length; i++) {
+      pagePairs.push([comboMenus[i]]);
+    }
+
+    const Page = React.forwardRef((props, ref) => {
+      return (
+        <div className="page" ref={ref}>
+          <div className="page-content h-full">
+            {props.children}
+          </div>
+        </div>
+      );
+    });
+
     return (
-      <section id="menu" className="p-4 sm:p-6 md:p-8 lg:p-10 royal-black pattern-bg relative overflow-hidden">
+      <section id="menu" className="p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 royal-black pattern-bg relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           {/* Decorative Pot Images */}
           <motion.img 
             src={pot1} 
             alt="decorative pot" 
-            className="absolute top-1/4 -right-20 w-40 sm:w-50 md:w-60 h-40 sm:h-50 md:h-60 opacity-20 rotate-12"
+            className="absolute top-1/4 -right-10 sm:-right-20 w-24 sm:w-40 md:w-50 lg:w-60 h-24 sm:h-40 md:h-50 lg:h-60 opacity-20 rotate-12"
             animate={{ 
               y: [0, -20, 0],
               rotate: [12, 15, 12]
@@ -166,7 +218,7 @@ export default function Menu() {
           <motion.img 
             src={pot1} 
             alt="decorative pot" 
-            className="absolute bottom-1/4 -left-20 w-40 sm:w-50 md:w-60 h-40 sm:h-50 md:h-60 opacity-20 -rotate-12"
+            className="absolute bottom-1/4 -left-10 sm:-left-20 w-24 sm:w-40 md:w-50 lg:w-60 h-24 sm:h-40 md:h-50 lg:h-60 opacity-20 -rotate-12"
             animate={{ 
               y: [0, 20, 0],
               rotate: [-12, -15, -12]
@@ -179,29 +231,29 @@ export default function Menu() {
           />
           
           {/* Spice Patterns */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:15px_15px] sm:bg-[length:20px_20px] opacity-5"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:10px_10px] sm:bg-[length:15px_15px] md:bg-[length:20px_20px] opacity-5"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16 relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 border-2 border-[#D4AF37]/5 rounded-full"></div>
+        <div className="max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-7xl mx-auto relative">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 border-2 border-[#D4AF37]/5 rounded-full"></div>
             <motion.h2 
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold ethnic-gold font-serif mb-4 sm:mb-5 md:mb-6 tracking-wide relative"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold ethnic-gold font-serif mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-wide relative"
             >
               <span className="relative z-10">
                 What's on the pot 
                 <span className="block text-[#FDB931] mt-1 sm:mt-2 italic">today?</span>
               </span>
-              <div className="absolute -bottom-2 sm:-bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+              <div className="absolute -bottom-2 sm:-bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-24 sm:w-32 md:w-40 lg:w-48 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-[#FDB931] text-lg sm:text-xl md:text-2xl italic font-serif relative z-10"
+              className="text-[#FDB931] text-base sm:text-lg md:text-xl lg:text-2xl italic font-serif relative z-10"
             >
               Experience the royal flavors of authentic dum biryani
             </motion.p>
@@ -214,20 +266,20 @@ export default function Menu() {
             animate="visible"
           >
             {/* Mobile View - Horizontal Scroll Cards */}
-            <div className="md:hidden">
-              <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2">
+            <div className="block md:hidden">
+              <div className="flex overflow-x-auto gap-3 sm:gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2 scrollbar-hide">
                 {items.map((item, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="flex-none w-[280px] snap-center"
+                    className="flex-none w-[260px] sm:w-[280px] snap-center"
                   >
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       className="bg-black/50 border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/40 transition-all duration-300 h-full"
                     >
                       {/* Image Section */}
-                      <div className="relative h-40">
+                      <div className="relative h-36 sm:h-40">
                         <img 
                           src={item.image} 
                           alt={item.name}
@@ -277,291 +329,271 @@ export default function Menu() {
               </div>
             </div>
 
-            {/* Desktop View - Timeline Layout */}
+            {/* Desktop View - Booklet Layout */}
             <div className="hidden md:block">
-              {/* Curved Timeline */}
-              <svg className="absolute left-1/2 transform -translate-x-1/2 h-full w-1" viewBox="0 0 1 1000" preserveAspectRatio="none">
-                <path
-                  d="M0.5,0 C0.5,100 0.5,200 0.5,300 C0.5,400 0.5,500 0.5,600 C0.5,700 0.5,800 0.5,900 C0.5,1000"
-                  fill="none"
-                  stroke="#D4AF37"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  className="animate-dash"
-                />
-              </svg>
+              <div className="relative max-w-[90%] lg:max-w-6xl mx-auto">
+                {/* Book Pages */}
+                <div className="relative p-4 sm:p-6 md:p-8 lg:p-12">
+                  {/* Book Title */}
+                  <div className="text-center mb-8 sm:mb-10 md:mb-12 relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 border-2 border-[#D4AF37]/5 rounded-full"></div>
+                  </div>
 
-              {/* Menu Items */}
-              <div className="space-y-24 md:space-y-32">
-                {items.map((item, index) => (
-                  <motion.div 
-                    key={index} 
-                    variants={itemVariants}
-                    className={`relative flex items-center ${
-                      index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                    }`}
-                  >
-                    {/* Content */}
-                    <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 lg:pr-12' : 'pl-8 lg:pl-12'}`}>
-                      <motion.div 
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-black/50 border border-[#D4AF37]/20 rounded-xl p-8 hover:border-[#D4AF37]/40 transition-all duration-300"
-                      >
-                        <div className="mb-4">
-                          <span className="text-[#D4AF37] text-sm font-medium tracking-wider relative">
-                            {item.journey}
-                            <div className="absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-semibold ethnic-gold mb-4">
-                          {item.name}
-                        </h3>
-                        <p className="text-[#FDB931]/80 text-lg mb-6">
-                          {item.desc}
-                        </p>
-                        <div className="flex items-center gap-3">
-                          <span className="text-[#D4AF37]/80 text-lg">{item.spice}</span>
-                          {item.bestseller && (
-                            <motion.span 
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-[#D4AF37] text-black px-4 py-1.5 rounded-full text-sm font-medium"
-                            >
-                              Best Seller
-                            </motion.span>
-                          )}
-                          {item.special && (
-                            <motion.span 
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-[#FDB931] text-black px-4 py-1.5 rounded-full text-sm font-medium"
-                            >
-                              Chef's Special
-                            </motion.span>
-                          )}
-                        </div>
-                      </motion.div>
-                    </div>
-
-                    {/* Timeline dot with animation */}
-                    <motion.div 
-                      className="absolute left-1/2 transform -translate-x-1/2"
-                      whileHover={{ scale: 1.2 }}
+                  {/* Flip Book */}
+                  <div className="book-container w-full max-w-[90vw] mx-auto">
+                    <HTMLFlipBook
+                      width={window.innerWidth < 768 ? 300 : window.innerWidth < 1024 ? 400 : 500}
+                      height={window.innerWidth < 768 ? 450 : window.innerWidth < 1024 ? 600 : 700}
+                      size="stretch"
+                      minWidth={280}
+                      maxWidth={800}
+                      minHeight={400}
+                      maxHeight={900}
+                      maxShadowOpacity={0.5}
+                      showCover={true}
+                      mobileScrollSupport={true}
+                      className="book"
+                      style={{
+                        '--book-border-color': '#D4AF37',
+                        '--book-border-width': '2px',
+                        '--book-border-radius': '1rem',
+                        '--book-shadow': '0 0 20px rgba(212, 175, 55, 0.2)',
+                        '--book-background': 'rgba(0, 0, 0, 0.8)',
+                      }}
                     >
-                      <div className="w-4 h-4 rounded-full bg-[#D4AF37] border-4 border-black relative">
-                        <div className="absolute inset-0 rounded-full bg-[#D4AF37] animate-ping opacity-75"></div>
-                      </div>
-                    </motion.div>
-
-                    {/* Image with animation */}
-                    <div className="w-1/2">
-                      <motion.div 
-                        whileHover={{ scale: 1.05 }}
-                        className={`relative h-72 rounded-xl overflow-hidden ${
-                          index % 2 === 0 ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'
-                        }`}
-                      >
-                        <img 
-                          src={item.image} 
-                          alt={item.name}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Combo Menus Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-24 sm:mt-32 md:mt-40"
-          >
-            <div className="text-center mb-12 sm:mb-14 md:mb-16 relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 border-2 border-[#D4AF37]/5 rounded-full"></div>
-              <motion.h2 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold ethnic-gold font-serif mb-4 sm:mb-5 md:mb-6 tracking-wide relative"
-              >
-                <span className="relative z-10">
-                  Combo Specials
-                  <span className="block text-[#FDB931] mt-1 sm:mt-2 italic">complete meals for every occasion</span>
-                </span>
-                <div className="absolute -bottom-2 sm:-bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-              </motion.h2>
-            </div>
-
-            <motion.div 
-              className="relative"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {/* Mobile View - Horizontal Scroll Cards */}
-              <div className="md:hidden">
-                <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2">
-                  {comboMenus.map((combo, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemVariants}
-                      className="flex-none w-[280px] snap-center"
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-black/50 border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/40 transition-all duration-300 h-full"
-                      >
-                        {/* Image Section */}
-                        <div className="relative h-40">
-                          <img 
-                            src={combo.image} 
-                            alt={combo.name}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                          <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <span className="text-[#D4AF37] text-sm font-medium tracking-wider">
-                              {combo.journey}
-                            </span>
-                            <h3 className="text-xl font-semibold ethnic-gold mt-1">
-                              {combo.name}
-                            </h3>
-                          </div>
-                        </div>
-
-                        {/* Content Section */}
-                        <div className="p-4">
-                          <p className="text-[#FDB931]/80 text-sm mb-3">
-                            {combo.desc}
-                          </p>
-                          <div className="space-y-2 mb-4">
-                            {combo.details.map((detail, idx) => (
-                              <div key={idx} className="flex items-center text-sm text-[#FDB931]/90">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mr-2"></span>
-                                {detail}
+                      {/* Cover Page */}
+                      <Page>
+                        <div className="h-full w-full bg-gradient-to-b from-black/40 via-black/30 to-black/40 border border-[#D4AF37]/20 rounded-xl p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                          {/* Decorative Background Elements */}
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:20px_20px] opacity-5"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 via-transparent to-[#FDB931]/5"></div>
+                          
+                          <div className="text-center relative z-10">
+                            <motion.div
+                              className="relative mb-8"
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.6 }}
+                            >
+                              <motion.img 
+                                src={logo} 
+                                alt="Raviyora Logo" 
+                                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.3 }}
+                              />
+                              <div className="absolute -inset-4 bg-[#D4AF37]/5 rounded-full blur-xl"></div>
+                            </motion.div>
+                            
+                            <motion.h3 
+                              className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#D4AF37] mb-6"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.3, duration: 0.6 }}
+                            >
+                              Raviyora
+                            </motion.h3>
+                            
+                            <motion.p 
+                              className="text-[#FDB931]/80 text-xl mb-8 font-serif"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.4, duration: 0.6 }}
+                            >
+                              Discover our authentic biryani recipes
+                            </motion.p>
+                            
+                            <motion.div 
+                              className="w-32 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mb-8"
+                              initial={{ opacity: 0, scaleX: 0 }}
+                              animate={{ opacity: 1, scaleX: 1 }}
+                              transition={{ delay: 0.5, duration: 0.6 }}
+                            ></motion.div>
+                            
+                            <motion.div 
+                              className="relative group"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.6, duration: 0.6 }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/10 to-[#FDB931]/10 rounded-full blur-md group-hover:blur-lg transition-all duration-300"></div>
+                              <div className="relative flex items-center justify-center gap-3 px-6 py-3 border border-[#D4AF37]/20 rounded-full bg-black/20 backdrop-blur-sm group-hover:border-[#D4AF37]/40 transition-all duration-300">
+                                <FaArrowRight className="text-[#D4AF37] text-lg group-hover:translate-x-1 transition-transform duration-300" />
+                                <span className="text-[#D4AF37] text-sm font-medium tracking-wider">Click or swipe to explore</span>
                               </div>
-                            ))}
-                          </div>
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center gap-2">
-                              <span className="text-[#D4AF37]/80 text-sm">{combo.spice}</span>
-                              <span className="text-[#D4AF37]/60 text-xs">•</span>
-                              <span className="text-[#D4AF37]/80 text-sm">{combo.serves}</span>
-                            </div>
-                            <span className="text-[#FDB931] font-semibold">{combo.price}</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span className="text-[#D4AF37]/60 text-xs">{combo.time}</span>
-                            <span className="text-[#FDB931]/80 text-xs">{combo.savings}</span>
-                          </div>
-                          <div className="flex gap-2 mt-3">
-                            {combo.bestseller && (
-                              <motion.span 
-                                whileHover={{ scale: 1.05 }}
-                                className="bg-[#D4AF37] text-black px-3 py-1 rounded-full text-xs font-medium"
-                              >
-                                Best Seller
-                              </motion.span>
-                            )}
-                            {combo.special && (
-                              <motion.span 
-                                whileHover={{ scale: 1.05 }}
-                                className="bg-[#FDB931] text-black px-3 py-1 rounded-full text-xs font-medium"
-                              >
-                                Special Offer
-                              </motion.span>
-                            )}
+                            </motion.div>
                           </div>
                         </div>
-                      </motion.div>
-                    </motion.div>
-                  ))}
+                      </Page>
+
+                      {/* Menu Pages */}
+                      {pagePairs.map((pair, index) => (
+                        <Page key={index}>
+                          <div className="h-full w-full bg-gradient-to-b from-black/40 via-black/30 to-black/40 border border-[#D4AF37]/20 rounded-xl p-3 sm:p-4 md:p-6 relative overflow-hidden">
+                            {/* Decorative Background Elements */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:20px_20px] opacity-5"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 via-transparent to-[#FDB931]/5"></div>
+                            
+                            <div className="relative z-10 h-full flex flex-col">
+                              {pair.map((item, itemIndex) => (
+                                <motion.div 
+                                  key={itemIndex}
+                                  variants={itemVariants}
+                                  className="relative group h-full flex flex-col"
+                                >
+                                  {/* Image Section */}
+                                  <div className="relative h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden mb-4 sm:mb-6">
+                                    <img 
+                                      src={item.image} 
+                                      alt={item.name}
+                                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                    {/* Badges */}
+                                    <div className="absolute top-4 right-4 flex gap-2">
+                                      {item.bestseller && (
+                                        <span className="bg-[#D4AF37] text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                                          Best Seller
+                                        </span>
+                                      )}
+                                      {item.special && (
+                                        <span className="bg-[#FDB931] text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                                          {item.journey === "The Feast" ? "Special Offer" : "Chef's Special"}
+                                        </span>
+                                      )}
+                                      {item.mustTry && (
+                                        <span className="bg-[#D4AF37] text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                                          Must Try
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+
+                                  {/* Content Section */}
+                                  <div className="flex-1 flex flex-col">
+                                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                                      <span className="text-[#D4AF37] text-sm font-medium tracking-wider relative inline-block">
+                                        {item.journey}
+                                        <div className="absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
+                                      </span>
+                                      <div className="flex items-center gap-2">
+                                        <span className={`text-lg ${item.type === 'veg' ? 'text-green-500' : 'text-red-500'}`}>
+                                          {item.type === 'veg' ? '🌱' : '🍗'}
+                                        </span>
+                                        <span className="text-[#D4AF37]/80 text-sm">{item.serves}</span>
+                                      </div>
+                                    </div>
+                                    <h3 className="text-2xl sm:text-3xl font-semibold ethnic-gold mb-2 sm:mb-4 font-serif transition-colors duration-300 group-hover:text-[#FDB931]">
+                                      {item.name}
+                                    </h3>
+                                    <p className="text-base sm:text-lg text-[#FDB931]/80 mb-4 sm:mb-6 font-serif italic flex-1">
+                                      {item.desc}
+                                    </p>
+                                    
+                                    {/* Nutrition Info */}
+                                    <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6 p-3 sm:p-4 bg-black/20 rounded-xl border border-[#D4AF37]/10">
+                                      <div className="text-center">
+                                        <span className="block text-[#D4AF37] text-sm mb-1">Protein</span>
+                                        <span className="text-[#FDB931] text-lg font-medium">{item.protein}</span>
+                                      </div>
+                                      <div className="text-center">
+                                        <span className="block text-[#D4AF37] text-sm mb-1">Calories</span>
+                                        <span className="text-[#FDB931] text-lg font-medium">{item.calories}</span>
+                                      </div>
+                                      <div className="text-center">
+                                        <span className="block text-[#D4AF37] text-sm mb-1">Popularity</span>
+                                        <span className="text-[#FDB931] text-lg font-medium">{item.popularity}</span>
+                                      </div>
+                                    </div>
+
+                                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-[#D4AF37]/20">
+                                      <div className="flex items-center gap-3">
+                                        <span className="text-[#D4AF37]/80 text-lg">{item.spice}</span>
+                                      </div>
+                                      <div className="flex flex-col items-end">
+                                        <span className="text-[#FDB931] text-2xl font-semibold">{item.price}</span>
+                                        {item.savings && (
+                                          <span className="text-[#D4AF37] text-sm">{item.savings}</span>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        </Page>
+                      ))}
+
+                      {/* End Cover */}
+                      <Page>
+                        <div className="h-full w-full bg-gradient-to-b from-black/40 via-black/30 to-black/40 border border-[#D4AF37]/20 rounded-xl p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                          {/* Decorative Background Elements */}
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:20px_20px] opacity-5"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 via-transparent to-[#FDB931]/5"></div>
+                          
+                          <div className="text-center relative z-10">
+                            <motion.div
+                              className="relative mb-8"
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.6 }}
+                            >
+                              <motion.img 
+                                src={logo} 
+                                alt="Raviyora Logo" 
+                                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.3 }}
+                              />
+                              <div className="absolute -inset-4 bg-[#D4AF37]/5 rounded-full blur-xl"></div>
+                            </motion.div>
+                            
+                            <motion.h3 
+                              className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#D4AF37] mb-6"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.3, duration: 0.6 }}
+                            >
+                              Thank You
+                            </motion.h3>
+                            
+                            <motion.p 
+                              className="text-[#FDB931]/80 text-xl mb-8 font-serif"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.4, duration: 0.6 }}
+                            >
+                              We hope you enjoyed exploring our menu
+                            </motion.p>
+                            
+                            <motion.div 
+                              className="w-32 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mb-8"
+                              initial={{ opacity: 0, scaleX: 0 }}
+                              animate={{ opacity: 1, scaleX: 1 }}
+                              transition={{ delay: 0.5, duration: 0.6 }}
+                            ></motion.div>
+                            
+                            <motion.div 
+                              className="relative group"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: 0.6, duration: 0.6 }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/10 to-[#FDB931]/10 rounded-full blur-md group-hover:blur-lg transition-all duration-300"></div>
+                              <div className="relative flex items-center justify-center gap-3 px-6 py-3 border border-[#D4AF37]/20 rounded-full bg-black/20 backdrop-blur-sm group-hover:border-[#D4AF37]/40 transition-all duration-300">
+                                <FaArrowLeft className="text-[#D4AF37] text-lg group-hover:-translate-x-1 transition-transform duration-300" />
+                                <span className="text-[#D4AF37] text-sm font-medium tracking-wider">Flip back to explore more</span>
+                              </div>
+                            </motion.div>
+                          </div>
+                        </div>
+                      </Page>
+                    </HTMLFlipBook>
+                  </div>
                 </div>
               </div>
-
-              {/* Desktop View - Grid Layout */}
-              <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {comboMenus.map((combo, index) => (
-                  <motion.div 
-                    key={index} 
-                    variants={itemVariants}
-                    className="relative"
-                  >
-                    <motion.div 
-                      whileHover={{ scale: 1.02 }}
-                      className="bg-black/50 border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/40 transition-all duration-300 h-full"
-                    >
-                      {/* Image Section */}
-                      <div className="relative h-48">
-                        <img 
-                          src={combo.image} 
-                          alt={combo.name}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                        <div className="absolute bottom-0 left-0 right-0 p-6">
-                          <span className="text-[#D4AF37] text-sm font-medium tracking-wider">
-                            {combo.journey}
-                          </span>
-                          <h3 className="text-2xl font-semibold ethnic-gold mt-1">
-                            {combo.name}
-                          </h3>
-                        </div>
-                      </div>
-
-                      {/* Content Section */}
-                      <div className="p-6">
-                        <p className="text-[#FDB931]/80 text-base mb-4">
-                          {combo.desc}
-                        </p>
-                        <div className="space-y-2 mb-6">
-                          {combo.details.map((detail, idx) => (
-                            <div key={idx} className="flex items-center text-sm text-[#FDB931]/90">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mr-2"></span>
-                              {detail}
-                            </div>
-                          ))}
-                        </div>
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center gap-3">
-                            <span className="text-[#D4AF37]/80 text-base">{combo.spice}</span>
-                            <span className="text-[#D4AF37]/60 text-sm">•</span>
-                            <span className="text-[#D4AF37]/80 text-base">{combo.serves}</span>
-                          </div>
-                          <span className="text-[#FDB931] text-xl font-semibold">{combo.price}</span>
-                        </div>
-                        <div className="flex items-center justify-between mb-4">
-                          <span className="text-[#D4AF37]/60 text-sm">{combo.time}</span>
-                          <span className="text-[#FDB931]/80 text-sm">{combo.savings}</span>
-                        </div>
-                        <div className="flex gap-2">
-                          {combo.bestseller && (
-                            <motion.span 
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-[#D4AF37] text-black px-4 py-1.5 rounded-full text-sm font-medium"
-                            >
-                              Best Seller
-                            </motion.span>
-                          )}
-                          {combo.special && (
-                            <motion.span 
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-[#FDB931] text-black px-4 py-1.5 rounded-full text-sm font-medium"
-                            >
-                              Special Offer
-                            </motion.span>
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
 
           <motion.div 
