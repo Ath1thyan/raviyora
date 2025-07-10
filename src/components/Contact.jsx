@@ -24,15 +24,15 @@ export default function Contact() {
       {
         icon: Mail,
         title: "Email",
-        value: "biriyani@dumdelights.in",
-        link: "mailto:biriyani@dumdelights.in",
+        value: "hello@raviyora.com",
+        link: "mailto:hello@raviyora.com",
         description: "For business inquiries"
       },
       {
         icon: Instagram,
         title: "Follow Us",
-        value: "@secret_spice",
-        link: "https://instagram.com/secret_spice",
+        value: "Secret & Spice",
+        link: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#",
         description: "For daily biryani stories"
       }
     ];

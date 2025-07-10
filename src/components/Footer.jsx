@@ -13,8 +13,8 @@ export default function Footer() {
         { name: "Contact", href: "#contact", icon: Phone }
       ],
       social: [
-        { name: "Instagram", href: "https://instagram.com/secret_spice", icon: Instagram },
-        { name: "Facebook", href: "https://facebook.com/secret_spice", icon: Facebook },
+        { name: "Instagram", href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", icon: Instagram },
+        { name: "Facebook", href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", icon: Facebook },
         { name: "Zomato", href: "https://zomato.com", icon: ExternalLink },
         { name: "Swiggy", href: "https://swiggy.com", icon: ExternalLink }
       ]
@@ -154,8 +154,8 @@ export default function Footer() {
                   </div>
                   <div className="text-left">
                     <p className="text-[#FDB931]/60 text-sm">Email us</p>
-                    <a href="mailto:biriyani@dumdelights.in" className="text-[#D4AF37] hover:text-[#FDB931] text-lg font-semibold transition-colors">
-                      biriyani@dumdelights.in
+                    <a href="mailto:hello@raviyora.com" className="text-[#D4AF37] hover:text-[#FDB931] text-lg font-semibold transition-colors">
+                    hello@raviyora.com
                     </a>
                   </div>
                 </div>

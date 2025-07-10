@@ -10,6 +10,8 @@ import b6 from "../assets/r2.webp";  // After empty
 import queue from "../assets/q2.jpg";
 import c2 from "../assets/c2.jpg";
 import emptyBox from "../assets/r5.jpg";
+import b3 from "../assets/b3.jpg";
+import b4 from "../assets/b4.jpeg";
 
 export default function Gallery() {
   const ref = useRef(null);
@@ -22,7 +24,7 @@ export default function Gallery() {
       layout: "featured",
       images: [
         { src: b1, title: "Saffron Touch", description: "The golden touch of saffron that makes every grain special.", size: "large" },
-        { src: b2, title: "Layered Richness", description: "Perfect layers of rice, meat, and spices.", size: "medium" }
+        { src: b2, title: "Layered Richness", description: "Perfect layers of rice, meat, and spices.", size: "large" }
       ]
     },
     {
@@ -32,7 +34,9 @@ export default function Gallery() {
       images: [
         { src: q1, title: "Lunch Rush", description: "The daily ritual of tech park foodies.", size: "small" },
         { src: queue, title: "Crowd Favorite", description: "Where patience meets anticipation.", size: "small" },
-        { src: q3, title: "Another Angle", description: "A different view of the hungry crowd.", size: "small" }
+        { src: q3, title: "Another Angle", description: "A different view of the hungry crowd.", size: "small" },
+        { src: b3, title: "Excited Faces", description: "Eagerly waiting for their turn.", size: "small" },
+        { src: b4, title: "Queue Vibes", description: "The anticipation builds up.", size: "small" }
       ]
     },
     {
@@ -61,7 +65,7 @@ export default function Gallery() {
       case "featured":
         return "grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto";
       case "horizontal":
-        return "flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2";
+        return "flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2 hide-scrollbar";
       case "grid":
         return "grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto";
       case "masonry":
