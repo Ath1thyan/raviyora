@@ -174,7 +174,7 @@ export default function WhereWeServe() {
                   {/* Spice Pattern Overlay */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#D4AF37_1px,transparent_1px)] bg-[length:10px_10px] opacity-5"></div>
                   
-                  <div className="relative flex flex-col">
+                  <div className="relative flex flex-col pl-10 pr-4">
                     {/* Title Section */}
                     <div className="mb-6">
                       <h3 className="text-[#D4AF37] font-semibold text-2xl mb-2">

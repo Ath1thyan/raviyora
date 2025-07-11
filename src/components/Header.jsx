@@ -35,8 +35,8 @@ export default function Header() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com/secret_spice", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", label: "Instagram" },
+    // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: MessageCircle, href: "https://wa.me/918484943143", label: "WhatsApp" }
   ];
 
