@@ -69,7 +69,7 @@ export default function Gallery() {
       case "grid":
         return "grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto";
       case "masonry":
-        return "flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory px-2 -mx-2 hide-scrollbar sm:columns-2 lg:columns-3 sm:gap-4 sm:max-w-5xl sm:mx-auto sm:px-2";
+        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto";
       default:
         return "grid grid-cols-1 sm:grid-cols-2 gap-4";
     }
@@ -129,17 +129,13 @@ export default function Gallery() {
                 const cardId = `${index}-${i}`;
                 const isFlipped = flippedCard === cardId;
 
-                // For 'The Aftermath' (masonry), use a fixed width on mobile for horizontal scroll
-                const isMasonry = section.layout === 'masonry';
-                const mobileCardClass = isMasonry ? 'w-[220px] sm:w-auto flex-shrink-0 sm:flex-shrink' : '';
-
                 return (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 * i, duration: 0.6 }}
-                    className={`group relative ${section.layout === 'horizontal' ? 'snap-center flex-shrink-0 w-[250px]' : ''} ${mobileCardClass}`}
+                    className={`group relative ${section.layout === 'horizontal' ? 'snap-center flex-shrink-0 w-[250px]' : ''}`}
                     onMouseEnter={() => setFlippedCard(cardId)}
                     onMouseLeave={() => setFlippedCard(null)}
                   >
