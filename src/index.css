@@ -162,3 +162,27 @@
     transform: scale(0.8);
   }
 }
+
+/* Custom Scrollbar Styles for Raviyora Theme */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #181818; /* deep black */
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #D4AF37 60%, #FDB931 100%);
+  border-radius: 8px;
+  border: 2px solid #181818;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FDB931 60%, #D4AF37 100%);
+}
+::-webkit-scrollbar-corner {
+  background: #181818;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #181818;
+}
