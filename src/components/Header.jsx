@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Instagram, Twitter, MessageCircle, X } from "lucide-react";
+import { Menu, Instagram, Twitter, MessageCircle, X, Linkedin } from "lucide-react";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -37,7 +37,8 @@ export default function Header() {
   const socialLinks = [
     { icon: Instagram, href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", label: "Instagram" },
     // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: MessageCircle, href: "https://wa.me/918484943143", label: "WhatsApp" }
+    { icon: MessageCircle, href: "https://wa.me/918484943143", label: "WhatsApp" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/raviyora-llp/", label: "LinkedIn" }
   ];
 
   const toggleMobileMenu = () => {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, ExternalLink, Home, Info, Utensils, Star, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Linkedin, ExternalLink, Home, Info, Utensils, Star, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -14,7 +14,7 @@ export default function Footer() {
       ],
       social: [
         { name: "Instagram", href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", icon: Instagram },
-        { name: "Facebook", href: "https://www.instagram.com/secret___spice/?igsh=MWd2cnJ0c2EzMWhkNg%3D%3D#", icon: Facebook },
+        { name: "LinkedIn", href: "https://www.linkedin.com/company/raviyora-llp/", icon: Linkedin },
         { name: "Zomato", href: "https://zomato.com", icon: ExternalLink },
         { name: "Swiggy", href: "https://swiggy.com", icon: ExternalLink }
       ]
