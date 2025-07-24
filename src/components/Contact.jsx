@@ -10,15 +10,15 @@ export default function Contact() {
       {
         icon: Phone,
         title: "Call Us",
-        value: "+91 84849 43143",
-        link: "tel:+918484943143",
+        value: "+91 91939 49691",
+        link: "tel:+919193949691",
         description: "For immediate assistance"
       },
       {
         icon: MessageCircle,
         title: "WhatsApp",
         value: "Chat with us",
-        link: "https://wa.me/918484943143",
+        link: "https://wa.me/9193949691",
         description: "For pre-orders & queries"
       },
       {
